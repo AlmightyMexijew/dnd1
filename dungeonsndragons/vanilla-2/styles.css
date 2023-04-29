@@ -51,6 +51,7 @@ h2,h3{font-size:bold;}
 }
 #attackstats{
     border:2px solid grey;
+    padding-inline:2vw;
     
 }
 #skills{

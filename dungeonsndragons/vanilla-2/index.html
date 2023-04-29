@@ -116,11 +116,27 @@
         
         
         <div id="attackstats">
+            <form>
+                <label for="attackinputs">Attack Inputs</label>
+                <input type="text" id="attackinputs">
+                <label for="attacknum">Attack Number</label>
+                <input type="number" id="attacknum">
+                <label for="attackdmg">Attack Dmg</label>
+                <input type="number" placeholder="# of dice">
+                <input type="number" placeholder="dmg die"
+
+            </form>
+            <button onclick="saveattacks()">Save Attack</button>
             <ol>
                 <li>Attack
                     <p id="attackname1"></p>
                     <p id="attackroll1"></p>
                     <p>dmg:<span id="basedmg1"></span></p>
+                </li>
+                <li>Attack 2
+                    <p id="attackname2"></p>
+                    <p id="attackroll2"></p>
+                    <p>dmg:<span id="basedmg2"></span></p>
                 </li>
             </ol>
         </div>
