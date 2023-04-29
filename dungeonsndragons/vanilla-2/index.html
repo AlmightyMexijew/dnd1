@@ -106,8 +106,10 @@
                 <form>
                     <label for="hpbase">HP Base</label>
                     <input type="number" id="hpbase">
+                    <br>
                     <label for="hptemp">Temp HP</label>
                     <input type="number" id="hptemp">
+                    <br>
                     <p>Current HP <span id="currenthealth"></span></p>
                 </form>
                 <p>HitDice<span id="hitdice"></span></p>
@@ -122,8 +124,8 @@
                 <label for="attacknum">Attack Number</label>
                 <input type="number" id="attacknum">
                 <label for="attackdmg">Attack Dmg</label>
-                <input type="number" placeholder="# of dice">
-                <input type="number" placeholder="dmg die"
+                <input type="number" placeholder="# of dice" id="attackdiecount">
+                <input type="number" placeholder="dmg die" id="attackdienum">
 
             </form>
             <button onclick="saveattacks()">Save Attack</button>

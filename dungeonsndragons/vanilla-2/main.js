@@ -142,6 +142,13 @@ function D20(){
 function D100(){
     console.log(Math.floor(Math.random()*100+1))
 }
+function attacktest1(){
+    attackinputs = document.getElementById('attackinputs').value;
+    attacknum = document.getElementById('attacknum').value;
+    attackdiecount = document.getElementById('attackdiecount').value;
+    attackdienum = document.getElementById('attackdienum').value;
+    console.log(`${attackinputs} is attack number ${attacknum} with damage of ${attackdiecount} d ${attackdienum}`)
+}
 //calculate bonuses
 
 //Objects
