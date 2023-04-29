@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT D&D</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="maincontainer">
+        <div id="mainstats">
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="nameinput">
+                <label for="classinput">Class</label>
+                <input type="text" id="classinput">
+                <label for="levelinput">Level</label>
+                <input type="number" id="levelinput">
+                <label for="raceinput">Race</label>
+                <input type="text" id="raceinput">
+                <label for="alignmentinput">Alignment</label>
+                <input type="text" id="alignmentinput">
+                <label for="xpinput">xp</label>
+                <input type="number" id="xpinput">
+            </form>
+            <form>
+                <ul>STATS
+                    <li>
+                        <label for="strinput"></label>
+                        <input type="number" id="strinput">STR</input>
+                        <p id="strbonus"></p>
+                    </li>
+                    <li>
+                        <label for="dexinput"></label>
+                        <input type="number" id="dexinput">DEX</input>
+                        <p id="dexbonus"></p>
+                    </li>
+                    <li>
+                        <label for="coninput"></label>
+                        <input type="number" id="coninput">CON</input>
+                        <p id="conbonus"></p>
+                    </li>
+                    <li>
+                        <label for="intinput"></label>
+                        <input type="number" id="intinput">INT</input>
+                        <p id="intbonus"></p>
+                    </li>
+                    <li>
+                        <label for="wisinput"></label>
+                        <input type="number" id="wisinput">WIS</input>
+                        <p id="wisbonus"></p>
+                    </li>
+                    <li>
+                        <label for="chainput"></label>
+                        <input type="number" id="chainput">CHA</input>
+                        <p id="chabonus"></p>
+                    </li>
+                </ul>
+            </form>
+            <button onclick="saveStats()">Save Stats</button>
+        </div>
+        <div id="proftable">
+            <h2>Proficiency Bonus(base+proficiency)</h2>
+            <ul>
+                <li>
+                    <h2>STR</h2>
+                    <p id="strprof"></p>
+                </li>
+                <li>
+                    <h2>DEX</h2>
+                    <p id="dexprof"></p>
+                </li>
+                <li>
+                    <h2>CON</h2>
+                    <p id="conprof"></p>
+                </li>
+                <li>
+                    <h2>INT</h2>
+                    <p id="intprof"></p>
+                </li>
+                <li>
+                    <h2>WIS</h2>
+                    <p id="wisprof"></p>
+                </li>
+                <li>
+                    <h2>CHA</h2>
+                    <p id="chaprof"></p>
+                </li>
+            </ul>
+            <div id="armorclass">
+                <form>
+                    <label for="armorclassinput">AC</label>
+                    <input type="number" id="armorclassinput">
+                    <label for="initiativeinput">INIT</label>
+                    <input type="number" id="initiativeinput">
+                    <label for="playerspeed">Speed</label>
+                    <input type="number" id="playerspeedinput">
+                    <label for="playerswimspeed">Swim Speed(if relevant)</label>
+                    <input type="number" id="playerswimspeedinput">
+                    <label for="playerairspeed">Player Air Speed(if relevant)</label>
+                    <input type="number" id="playerairspeedinput">
+                </form>
+            </div>
+            <div id="healthstats">
+                <form>
+                    <label for="hpbase">HP Base</label>
+                    <input type="number" id="hpbase">
+                    <label for="hptemp">Temp HP</label>
+                    <input type="number" id="hptemp">
+                    <p>Current HP <span id="currenthealth"></span></p>
+                </form>
+                <p>HitDice<span id="hitdice"></span></p>
+            </div>
+        </div>
+        
+        
+        <div id="attackstats">
+            <ol>
+                <li>Attack
+                    <p id="attackname1"></p>
+                    <p id="attackroll1"></p>
+                    <p>dmg:<span id="basedmg1"></span></p>
+                </li>
+            </ol>
+        </div>
+        <div id="skills">
+            <ul>
+                <li>
+                    <span id="acrobaticskill">Acrobatics</span><span id="acrobaticroll"> </span>
+                    <p>(dex)</p>
+                </li>
+                <li>
+                    <span id="animalhandlingskill">Animal Handling</span><span id="animalhandlingroll"> </span>
+                    <p>(wis)</p>
+                </li>
+                <li>
+                    <span id="arcanaskill">Arcana</span><span id="arcanaroll"> </span>
+                    <p>(int)</p>
+                </li>
+                <li>
+                    <span id="athleticsskill">Athletics</span><span id="athleticsroll"> </span>
+                    <p>(str)</p>
+                </li>
+                <li>
+                    <span id="deceptionskill">Deception</span><span id="deceptionroll"> </span>
+                    <p>(cha)</p>
+                </li>
+                <li>
+                    <span id="historyskill">History</span><span id="historyroll"> </span>
+                    <p>(int)</p>
+                </li>
+                <li>
+                    <span id="insightskill">Insight</span><span id="insightroll"> </span>
+                    <p>(wis)</p>
+                </li>
+                <li>
+                    <span id="intimidationskill">Intimidation</span><span id="intimidationroll"> </span>
+                    <p>(cha)</p>
+                </li>
+                <li>
+                    <span id="investigationskill">Investigation</span><span id="investigationroll"> </span>
+                </li>
+                <li>
+                    <span id="medicineskill">Medicine</span><span id="medicineroll"> </span>
+                    <p>(wis)</p>
+                </li>
+                <li>
+                    <span id="natureskill">Nature</span><span id="natureroll"> </span>
+                    <p>(int)</p>
+                </li>
+                <li>
+                    <span id="perceptionskill">Perception</span><span id="perceptionroll"> </span>
+                    <p>(wis)</p>
+                </li>
+                <li>
+                    <span id="performanceskill">Performance</span><span id="performanceroll"> </span>
+                    <p>(cha)</p>
+                </li>
+                <li>
+                    <span id="persuasionskill">Persuasion</span><span id="persuasionroll"> </span>
+                    <p>(cha)</p>
+                </li>
+                <li>
+                    <span id="religionskill">Religion</span><span id="religionroll"> </span>
+                    <p>(int)</p>
+                </li>
+                <li>
+                    <span id="sleightofhandskill">Slight of Hand</span><span id="slightofhandroll"> </span>
+                    <p>(dex)</p>
+                </li>
+                <li>
+                    <span id="stealthskill">Stealth</span><span id="stealthroll"> </span>
+                    <p>(dex)</p>
+                </li>
+                <li>
+                    <span id="survivalskill">Survival</span><span id="survivalroll"> </span>
+                    <p>(wis)</p>
+                </li>
+                <li>
+                    <span id="passiveperceptionskill">Passive Perception(against DC)</span><span id="passiveperceptionroll"> </span>
+                </li>
+            </ul>
+        </div>
+        <div id="languages">
+            <h2>Languages</h2>
+            <ul>
+                <form>
+                    <li><input type="text" id="lang1"></li>
+                    <li><input type="text" id="lang2"></li>
+                    <li><input type="text" id="lang3"></li>
+                    <li><input type="text" id="lang4"></li>
+                </form>
+            </ul>
+        </div>
+        <div id="equipment">
+            <h2>Equipment and Gear</h2>
+        </div>
+        <div id="spells">
+            <div id="spellrolls">
+                <ul>
+                    <li>Spellcasting class
+                        <p id="spellcasterclass"></p>
+                    </li>
+                    <li>Spellcasting ability
+                        <p id="spellcasterability"></p>
+                    </li>
+                    <li>Spell Save DC
+                        <p id="spellsavedc"></p>
+                    </li>
+                    <li>
+                        Spell Attack Bonus
+                        <p id="spellattackbonus"></p>
+                    </li>
+                </ul>
+            </div>
+            <div id="cantrips">
+                <ul>Cantrips(cast any time as action)
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="spellsL1">
+                <ul>L1 spells
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="spellslots">
+                <p>Spell Slots: <span id="spellslotcount"></span> </p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js">
+    </script>
+</body>
+</html>

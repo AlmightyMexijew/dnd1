@@ -1,0 +1,78 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-size:1em;
+}
+
+input[type=text]{
+    width:10vw;
+}
+input[type=number]{
+    width:4vw;
+}
+
+h2,h3{font-size:bold;}
+
+#maincontainer{
+    border:2px solid orange;
+    display:grid;
+    grid-template-columns:15% 15% 15% 15% 15% 15% 1fr;
+    grid-template-rows:70% 30%;
+    height:100vh;
+}
+#mainstats{
+    border:2px solid green;
+}
+#mainstats ul li{
+    padding:.5em;
+}
+#proftable{
+    border:2px solid yellow;
+    
+    
+}
+#proftable ul{list-style: none;}
+#proftable li{
+    padding-inline:.5em;
+    padding-block:4px;
+}
+#armorclass{
+    border:2px solid red;
+    padding-block:2vh;
+    margin-block:2vh;
+   
+}
+#healthstats{
+    border:2px solid purple;
+    padding-block:2vh;
+    margin-block:2vh;
+    
+}
+#attackstats{
+    border:2px solid grey;
+    
+}
+#skills{
+    border:2px solid black;
+    
+}
+#skills ul {list-style:none;}
+#languages{
+    border:2px green dotted;
+}
+#languages ul{
+    list-style:none;
+}
+#equipment{
+    border:2px yellow dotted;
+}
+#spells{
+    border:2px red dotted;
+}
+#spells ul{
+    list-style:none;
+}
+#spells ul li{
+    padding:.5em;
+}
